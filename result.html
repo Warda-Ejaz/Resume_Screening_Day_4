@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body { font-family: Arial; max-width: 700px; margin: 50px auto; padding: 20px; }
+       .result-box { background: #e8f5e9; padding: 30px; border-radius: 10px; border-left: 5px solid #4CAF50; }
+       .category { font-size: 28px; color: #2e7d32; font-weight: bold; }
+       .skill { display: inline-block; background: #4CAF50; color: white; padding: 5px 12px; margin: 5px; border-radius: 15px; }
+        a { color: #4CAF50; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>🎯 Prediction Result</h1>
+        <p>Predicted Job Category:</p>
+        <div class="category">{{ category }}</div>
+        <p>Confidence Score: <b>{{ confidence }}%</b></p>
+
+        <h3>Matching Skills Found:</h3>
+        {% for skill in skills %}
+            <span class="skill">{{ skill }}</span>
+        {% endfor %}
+
+        <h3>Resume Preview:</h3>
+        <p style="color: gray;">{{ resume_preview }}...</p>
+
+        <br><br>
+        <a href="/">← Upload Another Resume</a>
+    </div>
+</body>
+</html>
